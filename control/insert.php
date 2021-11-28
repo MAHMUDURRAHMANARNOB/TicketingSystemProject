@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+
+<html lang = "en">
+<body>
+<?php
+
+if($_SERVER["REQUEST_METHOD"] == "POST")
+{
+    if(!empty($_POST["name"]) and !empty($_POST["phone"]) and !empty($_POST["email"])and !empty($_POST["cat"])and !empty($_POST["dob"])and !empty($_POST["passwords"])and !empty ($_POST["cpassword"])){
+   
+    $name = $_POST["name"];
+    $phone = $_POST["phone"];
+    $email = $_POST["email"];
+    $cat = $_POST["cat"];
+    $dob = $_POST["dob"];
+    $passwords = $_POST["passwords"];
+    $cpassword = $_POST["cpassword"];
+  
+
+     if($passwords == $cpassword){
+   $servername = "localhost";
+   $username = "root";
+   $password = "";
+   $dbname = "project";
+
+
+   $conn = new mysqli($servername , $username, $password, $dbname);
+
+   if($conn->connect_error)
+   {
+       die("connection failed");
+   }
+
+   $smt = $conn->prepare("INSERT INTO registrationtable(username,phone,email,catagory,dob,password) VALUES(?,?,?,?,?,?)");
+   $smt->bind_param("sissss",$name,$phone,$email,$cat,$dob,$passwords);
+
+   //$sql = "INSERT INTO registrationTable(username,phone,email,catagory,dob,password)
+        //VALUES ('$name',$phone,'$email','$cat','$dob','$passwords')";
+
+        $name = $_POST["name"];
+        $phone = $_POST["phone"];
+        $email = $_POST["email"];
+        $cat = $_POST["cat"];
+        $dob = $_POST["dob"];
+        $passwords = $_POST["passwords"];
+        
+    
+    if($smt->execute()){
+    echo "<center><h1>Congratulation!!<br></h1>Account Created  Successfully</center>";
+    }
+    else {
+    echo "<center><h1>OOPS!!<br>Failed</h1></center>";
+    }
+
+    
+    $smt->close();
+    $conn->close();
+    }
+        else {
+            echo "<center><h1>OOPS!!<br>Password Didn't match</h1></center>";
+
+        }
+    }
+    else {
+        echo "<center><h1>OOPS!!<br>Please enter all fields</h1></center>";
+    }
+}
+?>
+
+</body>
+</html>
+
+
+    }
