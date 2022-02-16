@@ -27,7 +27,7 @@ if(isset($_REQUEST['mydata'])){
              echo "<tr>
                 <td>" .$res['departure']. "</td>
                 <td>" .$res['destination']. "</td>
-                <td>" .$res['date_of_journey']. "</td>
+                <td>" .$res['date']. "</td>
                 <td>" .$res['seat']. "</td>
                 <td>" .$res['bus']. "</td>
                 <td>" .$res['time']. "</td>
