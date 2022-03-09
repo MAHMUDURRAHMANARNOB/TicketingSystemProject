@@ -4,7 +4,7 @@
 
 
 <link rel="stylesheet" href = "../css/style.css">
-     <link rel="stylesheet" href = "../css/admin.css">
+<link rel="stylesheet" href = "../css/admin.css">
 <style>
         .myDiv {
         border: 5px outset red;
@@ -17,29 +17,29 @@
 <ul>
 
 <ul>
-      <li class="dropdown">
-              <a class="dropbtn" href="#">Account</a>
-              <div class="dropdown-content">
-                  <a href="../control/buyerUpdate.php">Edit Account</a>
-                  <a href="../view/ProjectLogin.php">Logout</a>
+    <li class="dropdown">
+        <a class="dropbtn" href="#">Account</a>
+            <div class="dropdown-content">
+                <a href="../control/buyerUpdate.php">Edit Account</a>
+                <a href="../view/ProjectLogin.php">Logout</a>
+            </div>
         </li>
-              </div>
-       <li class="dropdown">
-              <a class="dropbtn" href="#">About</a>
-              <div class="dropdown-content">
-                  <a href="help.php">Help</a>
-              </div>
+            
+        <li class="dropdown">
+            <a class="dropbtn" href="#">About</a>
+                <div class="dropdown-content">
+                    <a href="help.php">Help</a>
+                </div>
         </li>
         <li class="dropdown">
-              <a class="dropbtn" href="#">Manage</a>
-              <div class="dropdown-content">
-                  <a href="../control/adminAdd.php">Add User</a>
-                  <a href="../control/adminRemove.php">Remove User</a>
-                  <a href="../control/cancelTicket.php">Cancel Tickets</a>
-              </div>
+            <a class="dropbtn" href="#">Manage</a>
+                <div class="dropdown-content">
+                    <a href="adminInsert.php">Add User</a>
+                    <a href="../control/adminRemove.php">Remove User</a>
+                    <a href="../control/cancelTicket.php">Cancel Tickets</a>
+                </div>
         </li>
-      <li><a href="../view/admin.php">Home</a></li>   
-       
+    <li><a href="../view/admin.php">Home</a></li>   
     </ul>
         
     <br><br>
