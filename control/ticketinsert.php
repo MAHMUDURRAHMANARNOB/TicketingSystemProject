@@ -8,8 +8,8 @@
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
-   if(!empty($_POST["from"]) and !empty($_POST["to"]) and !empty($_POST["date"]) and !empty($_POST["seat"]) and !empty($_POST["bus"]) and !empty($_POST["time"]))
-   {
+    if(!empty($_POST["from"]) and !empty($_POST["to"]) and !empty($_POST["date"]) and !empty($_POST["seat"]) and !empty($_POST["bus"]) and !empty($_POST["time"]))
+    {
 
     $from = $_POST["from"];
     $to = $_POST["to"];
@@ -30,9 +30,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         die("connection failed");
     }
     $smt = $conn->prepare("INSERT INTO ticket(Departure,destination,date_of_journey,seat,bus,time) VALUES(?,?,?,?,?,?)");
-   $smt->bind_param("ssssss",$from,$to,$date,$seat,$bus,$time);
-   
-   $from = $_POST["from"];
+    $smt->bind_param("ssssss",$from,$to,$date,$seat,$bus,$time);
+    $from = $_POST["from"];
     $to = $_POST["to"];
     $date = $_POST["date"];
     $seat = $_POST["seat"];
@@ -47,10 +46,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         }
         $smt->close();
         $conn->close();
- 
 }
 }
-  
 
     ?>
 

@@ -1,13 +1,13 @@
 <?php
 include_once 'db.php';
-if(isset($_REQUEST['mydata'])){
+//if(isset($_REQUEST['mydata'])){
     
-    $a = $_REQUEST['mydata'];
+    $d = $_REQUEST['mydata'];
     
     $connection = new db();
     $conobj=$connection->OpenCon();
     
-    $selectquery = "SELECT * FROM ticket WHERE date_of_journey='$a'";
+    $selectquery = "SELECT * FROM ticket WHERE date_of_journey='$d'";
     $query = mysqli_query ($conobj, $selectquery);
     //$nums = mysqli_num_rows ($query);
     
@@ -21,19 +21,17 @@ if(isset($_REQUEST['mydata'])){
                 <th>Bus</th>
                 <th>Time</th>
             </tr>";
-   
     while ($res = mysqli_fetch_assoc($query)){
         
-             echo "<tr>
+            echo "<tr>
                 <td>" .$res['departure']. "</td>
                 <td>" .$res['destination']. "</td>
                 <td>" .$res['date_of_journey']. "</td>
                 <td>" .$res['seat']. "</td>
                 <td>" .$res['bus']. "</td>
                 <td>" .$res['time']. "</td>
-               
             </tr>";
         }
         echo "</table>";
-    }
+//    }
 ?>

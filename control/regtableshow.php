@@ -21,16 +21,16 @@ if(isset($_REQUEST['mydata'])){
                 <th>Date of Birth</th>
                 
             </tr>";
-   
+
     while ($res = mysqli_fetch_assoc($query)){
         
-             echo "<tr>
+            echo "<tr>
                 <td>" .$res['username']. "</td>
                 <td>" .$res['phone']. "</td>
                 <td>" .$res['email']. "</td>
                 <td>" .$res['catagory']. "</td>
                 <td>" .$res['dob']. "</td>
-               
+            
             </tr>";
         }
         echo "</table>";

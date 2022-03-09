@@ -1,9 +1,6 @@
 <?php
 include_once 'db.php';
 if(isset($_REQUEST['mydata'])){
-    
-    
-    
     $connection = new db();
     $conobj=$connection->OpenCon();
     
@@ -21,17 +18,15 @@ if(isset($_REQUEST['mydata'])){
                 <th>Bus</th>
                 <th>Time</th>
             </tr>";
-   
     while ($res = mysqli_fetch_assoc($query)){
         
-             echo "<tr>
+            echo "<tr>
                 <td>" .$res['departure']. "</td>
                 <td>" .$res['destination']. "</td>
                 <td>" .$res['date']. "</td>
                 <td>" .$res['seat']. "</td>
                 <td>" .$res['bus']. "</td>
                 <td>" .$res['time']. "</td>
-               
             </tr>";
         }
         echo "</table>";

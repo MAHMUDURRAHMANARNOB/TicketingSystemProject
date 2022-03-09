@@ -19,10 +19,10 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1
 
 <?php
 if(!isset($_COOKIE[$cookie_name])) {
-     echo "Cookie named '" . $cookie_name . "' is not set!";
+    echo "Cookie named '" . $cookie_name . "' is not set!";
 } else {
-     echo "Cookie '" . $cookie_name . "' is set!<br>";
-     echo "Value is: " . $_COOKIE[$cookie_name];
+    echo "Cookie '" . $cookie_name . "' is set!<br>";
+    echo "Value is: " . $_COOKIE[$cookie_name];
 }
 ?>
 
@@ -49,7 +49,6 @@ if(!isset($_COOKIE[$cookie_name])) {
         text-align: center;
         }
     </style>
-   
 </head>
 
 <body style = "background: url(https://c.files.bbci.co.uk/116EB/production/_109730417_gettyimages-1139730157resize.jpg); background-size: 100% ;">
@@ -63,17 +62,17 @@ if(!isset($_COOKIE[$cookie_name])) {
                   <a href="../control/return.php">Return Ticket</a>
                   <a href="print.php">Your purchase</a>
                   <a href="ProjectLogin.php">Logout</a>
-        </li>
               </div>
-       <li class="dropdown">
+        </li>
+              
+        <li class="dropdown">
               <a class="dropbtn" href="#">About</a>
               <div class="dropdown-content">
                   <a href="help.php">Help</a>
               </div>
         </li>
         <li><a href="help.php">Contact</a></li>
-      <li><a href="#">Home</a></li>   
-       
+      <li><a href="#">Home</a></li> 
     </ul>
       </br>
 
@@ -85,7 +84,6 @@ if(!isset($_COOKIE[$cookie_name])) {
     <center>
     <div >
     <table border= "2" height ="300px" width="30%">
-       
     <tr bgcolor = Harlequin>
         <th colspan="2"> Find Your Bus</th>
         
@@ -130,7 +128,7 @@ if(!isset($_COOKIE[$cookie_name])) {
         
     <h1><center>All Availabe Tickets</center></h1>
             <table border="0" align="center">
-               <tr>
+              <tr>
                   <th>Departure</th>
                   <th>Destination</th>
                   <th>Date</th>
@@ -149,7 +147,7 @@ if(!isset($_COOKIE[$cookie_name])) {
                     //$nums = mysqli_num_rows ($query);
                     while ($res = mysqli_fetch_assoc($query)){
                     ?>
-                       <tr>
+                      <tr>
                           <td><?php echo $res['departure'] ?></td>
                           <td><?php echo $res['destination'] ?></td>
                           <td><?php echo $res['date_of_journey'] ?></td>

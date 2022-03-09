@@ -7,7 +7,6 @@
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
     if(!empty($_POST["name"]) and !empty($_POST["phone"]) and !empty($_POST["email"])and !empty($_POST["cat"])and !empty($_POST["dob"])and !empty($_POST["passwords"])and !empty ($_POST["cpassword"])){
-   
     $name = $_POST["name"];
     $phone = $_POST["phone"];
     $email = $_POST["email"];
@@ -15,23 +14,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $dob = $_POST["dob"];
     $passwords = $_POST["passwords"];
     $cpassword = $_POST["cpassword"];
-  
 
-     if($passwords == $cpassword){
-   $servername = "localhost";
-   $username = "root";
-   $password = "";
-   $dbname = "project";
+    if($passwords == $cpassword){
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "project";
 
 
-   $conn = new mysqli($servername , $username, $password, $dbname);
+        $conn = new mysqli($servername , $username, $password, $dbname);
 
-   if($conn->connect_error)
-   {
-       die("connection failed");
-   }
+    if($conn->connect_error)
+        {
+            die("connection failed");
+        }
 
-   $sql = "INSERT INTO registrationTable(username,phone,email,catagory,dob,password)
+    $sql = "INSERT INTO registrationTable(username,phone,email,catagory,dob,password)
         VALUES ('$name',$phone,'$email','$cat','$dob','$passwords')";
 
         $res = $conn->query($sql);

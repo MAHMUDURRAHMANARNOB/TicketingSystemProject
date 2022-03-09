@@ -4,13 +4,8 @@
 <title>Ticketing System</title>
 <center>
 <tittle><h1 style= " font-family:Times New Roman;">REGISTRATION FORM</h1><br></tittle>
-
 </head>
-
 <body style = "background: url(https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80) ; background-size: 100% ;">
-  
-
-
 <form action="http://localhost/TicketingSystem/control/insert.php" onsubmit="return RegValidateForm()" method="post" enctype ="multipart/form-data"> 
   <table border= "2" height ="400px" width="30%">
   <tr bgcolor = Harlequin>
@@ -65,10 +60,6 @@
         
       <td><input type="password"name="cpassword" id="cpassword" placeholder="Confirm password "></td>
       </tr>
-
-     
-         
-
       <tr bgcolor = Harlequin>
       <td colspan="2">
       <input style="margin-right: 40px; height: 30px; width: 70px" type="Submit" value= "Register">
@@ -78,10 +69,8 @@
       </td>
       </tr>
 
-   
-
-   </table>
-   </center>
-   <script src = "../javascript/validation.js"></script>
+  </table>
+  </center>
+  <script src = "../javascript/validation.js"></script>
 </body>
 </html>

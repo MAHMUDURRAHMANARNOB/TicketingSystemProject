@@ -12,8 +12,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         $username = "root";
         $password = "";
         $dbname = "project";
-     
-     
+
         $conn = new mysqli($servername , $username, $password, $dbname);
         // Check connection
         if ($conn->connect_error) {

@@ -1,6 +1,6 @@
 <?php
 include('db.php');
- 
+
 session_start();
 $error="";
 // store session data
@@ -12,12 +12,12 @@ else
 {
 $username=$_POST['username'];
 $password=$_POST['password'];
- 
+
 $connection = new db();
 $conobj=$connection->OpenCon();
- 
+
 $userQuery=$connection->CheckUser($conobj,"registrationtable",$username,$password);
- 
+
 if ($userQuery->num_rows > 0)
 {
   while($row = mysqli_fetch_assoc($userQuery))
@@ -50,12 +50,12 @@ if ($userQuery->num_rows > 0)
     }
   }
 }
- else {
+else {
 $error = "<center><h1> Username or Password Is Invalid <br><h1></center>";
 }
 $connection->CloseCon($conobj);
- 
+
 }
 }
- 
+
 ?>

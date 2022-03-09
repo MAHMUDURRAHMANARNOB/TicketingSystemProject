@@ -25,7 +25,6 @@ if(isset($_REQUEST['mydata'])){
         <td>".$res['catagory']."</td>
         <td>".$res['dob']."</td>
         
-     
     </tr>
     </table>";
     

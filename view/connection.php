@@ -8,10 +8,10 @@ $conn=new mysqli($servername , $username, $password);// MySQLi connection object
 // Che//ck connection
 
 function CheckUser($conn,$table,$username,$password)
- {
+{
 $result = $conn->query("SELECT * FROM ". $table." WHERE name='". $username."' AND password='". $password."'");
- return $result;
- }
+return $result;
+}
 
 
 if ($conn->connect_error){
