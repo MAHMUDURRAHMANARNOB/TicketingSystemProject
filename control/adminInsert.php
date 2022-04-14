@@ -29,20 +29,28 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             die("connection failed");
         }
 
-    $sql = "INSERT INTO registrationTable(username,phone,email,catagory,dob,password)
+    $sql = "INSERT INTO registrationtable (username,phone,email,catagory,dob,password)
         VALUES ('$name',$phone,'$email','$cat','$dob','$passwords')";
 
+        
         $res = $conn->query($sql);
-
+        /* if (mysqli_query($conn, $sql)) {
+            echo "New record created successfully";
+          } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+          } */
         if($res)
         {
             echo "<center><h1>Congratulation!!<br></h1>Account Created  Successfully</center>";
         }
         else 
         {
+            echo "<center><h1>Error: <h1><center>" . $sql . "<br>" . mysqli_error($conn);
+            /* echo $name,$phone,$email,$cat,$dob,$passwords, $sql; */
             echo "<center><h1>OOPS!!<br>Failed</h1></center>";
-        }
-        $conn->close();
+        } 
+         $conn->close();
+        /* mysqli_close($conn); */
     }
         else {
             echo "<center><h1>OOPS!!<br>Password Didn't match</h1></center>";
